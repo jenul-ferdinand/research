@@ -1,0 +1,28 @@
+name: Sync research submodules
+
+on:
+  repository_dispatch:
+    types: [research-updated]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-submodules
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - name: Bump submodules
+        run: |
+          git submodule update --remote
+          git diff --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: bump research submodules"
+          git push
