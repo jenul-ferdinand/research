@@ -1,0 +1,3 @@
+[submodule "hypergamy"]
+	path = hypergamy
+	url = https://github.com/jenul-ferdinand/hypergamy.git
