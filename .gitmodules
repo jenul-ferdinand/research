@@ -1,3 +1,6 @@
 [submodule "hypergamy"]
 	path = hypergamy
 	url = https://github.com/jenul-ferdinand/hypergamy.git
+[submodule "functional-vs-imperative"]
+	path = functional-vs-imperative
+	url = https://github.com/jenul-ferdinand/functional-vs-imperative.git
